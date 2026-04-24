@@ -48,7 +48,7 @@ npm run test:python
 Use `Revsplit` as the Vercel project root.
 
 - Build command: `npm run build`
-- Output directory: `out`
+- Output directory: leave blank/default
 - Environment variables: none required
 
-The included `vercel.json` pins those settings for import-based deployments.
+The included `vercel.json` pins the Next.js framework and build command. Do not override the output directory to `out` in Vercel; Vercel's Next.js builder handles the static export from `next.config.ts`.
