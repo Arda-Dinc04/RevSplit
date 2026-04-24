@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Inter Local";
+  src: url("/fonts/Inter/Inter_24pt-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Local";
+  src: url("/fonts/Inter/Inter_24pt-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Local";
+  src: url("/fonts/Inter/Inter_24pt-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk Local";
+  src: url("/fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk Local";
+  src: url("/fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #08090d;
+  --foreground: #f7f2ec;
+  --panel: #252734;
+  --panel-deep: #171821;
+  --panel-soft: #303342;
+  --line: rgba(255, 255, 255, 0.11);
+  --muted: #aaa7b5;
+  --accent: #d3475f;
+  --accent-2: #6d63d8;
+  --accent-3: #2f9ac9;
+  --positive: #59c18c;
+  --warning: #d6a84f;
+}
+
+@theme inline {
+  --color-background: #08090d;
+  --color-foreground: #f7f2ec;
+  --font-sans: "Inter Local", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Grotesk Local", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 9, 13, 0.78), rgba(8, 9, 13, 0.98)),
+    url("/assets/images/bg-waves.webp") center / cover fixed,
+    var(--background);
+  color: var(--foreground);
+  font-family: "Inter Local", ui-sans-serif, system-ui, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.dashboard-shell {
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.glass-panel {
+  border: 1px solid var(--line);
+  background: rgba(37, 39, 52, 0.9);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px);
+}
+
+.control-button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #1b1c27;
+  color: #f8f3ed;
+  padding: 9px 12px;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.control-button:hover {
+  border-color: rgba(211, 71, 95, 0.55);
+  background: #242634;
+}
+
+.control-button:active {
+  transform: translateY(1px);
+}
+
+.control-button[data-active="true"] {
+  border-color: rgba(211, 71, 95, 0.7);
+  background: linear-gradient(145deg, rgba(118, 28, 39, 0.95), rgba(49, 23, 123, 0.88));
+}
+
+.metric-pill {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #1b1c27;
+  padding: 10px 12px;
+}
+
+.split-card {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  background: #1b1c27;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.24);
+}
+
+.ticker-chip {
+  border-radius: 999px;
+  background: rgba(211, 71, 95, 0.16);
+  color: #ffd7df;
+}
+
+@media (min-width: 768px) {
+  .dashboard-shell {
+    padding: 24px;
+  }
+}

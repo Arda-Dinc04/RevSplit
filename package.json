@@ -1,0 +1,32 @@
+{
+  "name": "revsplit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static public reverse split dashboard for Vercel Hobby.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "setup:data": "python3 -m venv .venv && .venv/bin/python -m pip install --upgrade pip && .venv/bin/python -m pip install -r requirements.txt",
+    "export:data": "python3 tools/reverse_split_exporter.py --archive-csv data/reverse-splits-2025.csv --output public/data/reverse-splits.json",
+    "export:data:local": ".venv/bin/python tools/reverse_split_exporter.py --archive-csv data/reverse-splits-2025.csv --output public/data/reverse-splits.json",
+    "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'"
+  },
+  "dependencies": {
+    "lucide-react": "^1.11.0",
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
